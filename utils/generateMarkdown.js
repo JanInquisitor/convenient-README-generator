@@ -16,18 +16,18 @@
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     let result = ``;
-    if (data.title) result += `# ${data.title} \n made by [${data.username}](https://github.com/${data.username})`
+    if (data.title) result += `# ${data.title} \n made by [${data.username}](https://github.com/${data.username}).`
     result += '\n';
     if (data.description) result += `## Description: \n ${data.description} \n`
 
     result +=`
 ## Table of contents
     
-  1.[Install](#installation)
-  2.[Usage](#usage)
-  3.[Contribution](#contribution)
-  4.[Tests](#tests)
-  5.[Questions](#questions)
+  * [Install](#installation)\n
+  * [Usage](#usage)\n
+  * [Collaborators](#Collaborators)\n
+  * [Features](#Features)\n
+  * [Contact me](#Contact me)\n
 
 `
     if (data.installation) result += "## installation \n" + "```" + "\n" + `${data.installation} \n` + "```" + "\n"
@@ -38,6 +38,7 @@ function generateMarkdown(data) {
     result += '\n';
     if (data.features) result += `## Features: \n ${data.features} \n`
     result += '\n';
+    if(data.email) result += `## Contact me: \n ${data.email}`
 
 
     return result;
